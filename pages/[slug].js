@@ -1,8 +1,8 @@
-import getArticlesFromCDN from '@polyblog/polyblog-js-client/getArticlesFromCDN'
+import getArticles from '@polyblog/polyblog-js-client/getArticles'
 
 export async function getStaticPaths({locales}) {
   
-  let articles = await getArticlesFromCDN({
+  let articles = await getArticles({
     organizationId: 'c398463407b5c12f27f9aed4',
     project: 'polyblog',
     published: true,
@@ -23,7 +23,7 @@ export async function getStaticProps({locale, params}) {
   // console.log('getStaticProps', params)
 
   const { slug } = params
-  const articles = await getArticlesFromCDN({
+  const articles = await getArticles({
     organizationId: 'c398463407b5c12f27f9aed4',
     project: 'polyblog',
     locale, 

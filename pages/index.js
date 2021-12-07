@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import getArticlesFromCDN from '@polyblog/polyblog-js-client/getArticlesFromCDN'
+import getArticles from '@polyblog/polyblog-js-client/getArticles'
 
 export async function getStaticProps({locale}) {
 
-  const articles = await getArticlesFromCDN({
+  const articles = await getArticles({
     organizationId: 'c398463407b5c12f27f9aed4',
     project: 'polyblog',
     locale, 
