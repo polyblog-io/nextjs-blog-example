@@ -1,4 +1,4 @@
-import getArticles from '@polyblog/polyblog-js-client/getArticles'
+import { getArticles } from '@polyblog/polyblog-js-client'
 
 export async function getStaticPaths({locales}) {
   
