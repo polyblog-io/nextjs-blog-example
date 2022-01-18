@@ -4,7 +4,7 @@ export async function getStaticPaths({locales}) {
   
   let articles = await getArticles({
     organizationId: 'c398463407b5c12f27f9aed4',
-    project: 'polyblog',
+    blog: 'polyblog',
     published: true,
   })
   
