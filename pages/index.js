@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import getArticles from '@polyblog/polyblog-js-client/getArticles'
+import { getArticles } from '@polyblog/polyblog-js-client'
 
 export async function getStaticProps({locale}) {
 
@@ -21,12 +20,9 @@ export async function getStaticProps({locale}) {
 
 export default function Blog({articles}) {
   
-  const router = useRouter()
-
   return (
     <div>
       <h1>Blog</h1>
-      <p>locale {router.locale}</p>
       {articles?.map(article => (
         <Link key={article._id} href={article.slugLocalized}>
           <a>
