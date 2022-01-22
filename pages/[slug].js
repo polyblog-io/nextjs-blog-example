@@ -3,8 +3,7 @@ import { getArticles } from '@polyblog/polyblog-js-client'
 export async function getStaticPaths({locales}) {
   
   let articles = await getArticles({
-    organizationId: 'c398463407b5c12f27f9aed4',
-    blog: 'polyblog',
+    blogId: '4217f90b8eaa86551e7f7d55',
     published: true,
   })
   
@@ -24,8 +23,7 @@ export async function getStaticProps({locale, params}) {
 
   const { slug } = params
   const articles = await getArticles({
-    organizationId: 'c398463407b5c12f27f9aed4',
-    blog: 'polyblog',
+    blogId: '4217f90b8eaa86551e7f7d55',
     locale, 
     slugLocalized: slug,
   })
