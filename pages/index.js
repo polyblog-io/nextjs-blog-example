@@ -4,10 +4,10 @@ import { getArticles } from '@polyblog/polyblog-js-client'
 export async function getStaticProps({locale}) {
 
   const articles = await getArticles({
-    blog: 'polyblog',
     locale, 
     published: true,
     sortDirection: 'DESC',
+    blogId: '4217f90b8eaa86551e7f7d55',
   })
 
   return {
