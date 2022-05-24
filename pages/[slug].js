@@ -11,7 +11,7 @@ export async function getStaticPaths({locales}) {
 
   const paths = articles.map((article) => ({
     locale: article.locale,
-    params: { slug: article.slugLocalized },
+    params: { slug: article.slug },
   }))
 
   return { paths, fallback: 'blocking' }
@@ -25,7 +25,7 @@ export async function getStaticProps({locale, params}) {
   const articles = await getArticles({
     blogId: '4217f90b8eaa86551e7f7d55',
     locale, 
-    slugLocalized: slug,
+    slug,
   })
 
   return {

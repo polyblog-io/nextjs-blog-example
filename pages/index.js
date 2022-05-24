@@ -24,7 +24,7 @@ export default function Blog({articles}) {
     <div>
       <h1>Blog</h1>
       {articles?.map(article => (
-        <Link key={article._id} href={article.slugLocalized}>
+        <Link key={article._id} href={article.slug}>
           <a>
             <div>{article.title}</div>
             <div>{article.subtitle}</div>
