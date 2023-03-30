@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import { getArticles } from '@polyblog/polyblog-js-client'
 
-export async function getStaticProps({locale}) {
-
+export async function getStaticProps({ locale }) {
   const articles = await getArticles({
-    locale, 
+    locale,
     published: true,
     sortDirection: 'DESC',
     blogId: '4217f90b8eaa86551e7f7d55',
@@ -12,14 +11,12 @@ export async function getStaticProps({locale}) {
 
   return {
     props: {
-      articles
-    }
+      articles,
+    },
   }
-
 }
 
-export default function Blog({articles}) {
-  
+export default function Blog({ articles }) {
   return (
     <div>
       <h1>Blog</h1>
@@ -27,11 +24,10 @@ export default function Blog({articles}) {
         <Link key={article._id} href={article.slug}>
           <a>
             <div>{article.title}</div>
-            <div>{article.subtitle}</div>
+            <div>{article.description}</div>
           </a>
         </Link>
       ))}
     </div>
   )
-
 }
